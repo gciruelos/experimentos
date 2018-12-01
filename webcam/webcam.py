@@ -3,9 +3,14 @@ import numpy as np
 from PIL import Image
 from sys import argv
 
-# M DEBE DIVIDIR A SQUARE_SIDE_BILLETE
-SQUARE_SIDE_BILLETE = 25
-M = 5
+# SQUARE_SIDE_BILLETE es el ancho y el alto de cada cuadradito en el que se
+# recortará al billete.
+SQUARE_SIDE_BILLETE = 20
+# M es en cuanto se debe agrandar la imagen original (por ejemplo, si la webcam
+# captura a 640x480 y M es 2, la imagen resultante va a ser 1280x960.
+# SQUARE_SIDE_BILLETE DEBE SER DIVISIBLE POR M!
+M = 2
+
 
 # https://en.wikipedia.org/wiki/Luma_(video)#Use_of_relative_luminance
 def luma(r,g,b):
